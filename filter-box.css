@@ -24,7 +24,7 @@ h2 {
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s linear;
 }
 
 .topic-card {
@@ -91,7 +91,7 @@ h2 {
     flex-direction: column;
     gap: 15px;
     padding: 5px;
-    margin: 10%;
+    margin: 0;
 }
 
 .rating-options,
