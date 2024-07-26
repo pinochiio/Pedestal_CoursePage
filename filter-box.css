@@ -24,7 +24,7 @@ h2 {
 
 .carousel {
     display: flex;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 0.5s linear;
 }
 
 .topic-card {

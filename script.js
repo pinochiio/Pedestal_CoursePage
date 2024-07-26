@@ -1,46 +1,49 @@
 const carousel = document.querySelector('.carousel');
 const buttons = document.querySelectorAll('.carousel-button');
+const cardWidth = document.querySelector('.topic-card').offsetWidth;
+const cards = Array.from(document.querySelectorAll('.topic-card'));
 let offset = 0;
+let isMouseDown = false;
+let startX;
+let scrollLeft;
 
-buttons.forEach(button => {
-    button.addEventListener('click', () => {
-        const direction = button.classList.contains('left') ? -1 : 1;
-        const cardWidth = document.querySelector('.topic-card').offsetWidth;
-        const maxOffset = -((carousel.childElementCount / 2) * cardWidth);
-
-        offset += direction * cardWidth * 2;
-
-        if (offset > 0) {
-            offset = 0;
-        } else if (offset < maxOffset) {
-            offset = maxOffset;
-        }
-
-        carousel.style.transform = `translateX(${offset}px)`;
-    });
+// Clone the carousel items for infinite loop effect
+cards.forEach(card => {
+    carousel.appendChild(card.cloneNode(true));
 });
 
-const autoScroll = () => {
-    const cardWidth = document.querySelector('.topic-card').offsetWidth;
-    const maxOffset = -((carousel.childElementCount / 2) * cardWidth);
-
-    offset -= cardWidth;
-
-    if (offset < maxOffset) {
+const totalWidth = cards.length * cardWidth;
+const updateCarousel = () => {
+    if (offset <= -totalWidth) {
         offset = 0;
+    } else if (offset >= 0) {
+        offset = -totalWidth;
     }
 
     carousel.style.transform = `translateX(${offset}px)`;
 };
 
-let autoScrollInterval = setInterval(autoScroll, 3000);
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        const direction = button.classList.contains('left') ? -1 : 1;
+        offset += direction * cardWidth * 2;
+        updateCarousel();
+    });
+});
+
+const autoScroll = () => {
+    offset -= cardWidth / 200; // Smaller step for slower movement (half speed)
+    updateCarousel();
+};
+
+let autoScrollInterval = setInterval(autoScroll, 16); // Approximately 60fps for smooth animation
 
 carousel.addEventListener('mouseenter', () => {
     clearInterval(autoScrollInterval);
 });
 
 carousel.addEventListener('mouseleave', () => {
-    autoScrollInterval = setInterval(autoScroll, 3000);
+    autoScrollInterval = setInterval(autoScroll, 16);
 });
 
 carousel.addEventListener('mousedown', (e) => {
@@ -56,7 +59,7 @@ carousel.addEventListener('mouseleave', () => {
 
 carousel.addEventListener('mouseup', () => {
     isMouseDown = false;
-    autoScrollInterval = setInterval(autoScroll, 3000);
+    autoScrollInterval = setInterval(autoScroll, 16);
 });
 
 carousel.addEventListener('mousemove', (e) => {
@@ -65,45 +68,25 @@ carousel.addEventListener('mousemove', (e) => {
     const x = e.pageX - carousel.offsetLeft;
     const walk = (x - startX) * 3; // Scroll-fast
     offset = scrollLeft - walk;
-    carousel.style.transform = `translateX(${offset}px)`;
+    updateCarousel();
 });
 
 // Add event listeners for arrow key navigation
 document.addEventListener('keydown', (e) => {
-    const cardWidth = document.querySelector('.topic-card').offsetWidth;
     if (e.key === 'ArrowRight') {
         offset -= cardWidth;
     } else if (e.key === 'ArrowLeft') {
         offset += cardWidth;
     }
-
-    const maxOffset = -((carousel.childElementCount / 2) * cardWidth);
-
-    if (offset > 0) {
-        offset = 0;
-    } else if (offset < maxOffset) {
-        offset = maxOffset;
-    }
-
-    carousel.style.transform = `translateX(${offset}px)`;
+    updateCarousel();
 });
 
 // Add event listener for mouse wheel scrolling
 carousel.addEventListener('wheel', (e) => {
-    const cardWidth = document.querySelector('.topic-card').offsetWidth;
     if (e.deltaY > 0) {
         offset -= cardWidth;
     } else {
         offset += cardWidth;
     }
-
-    const maxOffset = -((carousel.childElementCount / 2) * cardWidth);
-
-    if (offset > 0) {
-        offset = 0;
-    } else if (offset < maxOffset) {
-        offset = maxOffset;
-    }
-
-    carousel.style.transform = `translateX(${offset}px)`;
+    updateCarousel();
 });
