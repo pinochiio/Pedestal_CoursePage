@@ -308,3 +308,17 @@ h6{
     margin-left: 50px; 
 }
 
+/* Responsive adjustments for screens less than 370px */
+@media (max-width: 370px) {
+    .course-card {
+        width: 100%; /* Full width for each card */
+    }
+    
+    .course-card .content {
+        padding: 10px; /* Adjust padding for better spacing */
+    }
+    
+    .course-card img {
+        max-height: 200px; /* Adjust image height if needed */
+    }
+}
