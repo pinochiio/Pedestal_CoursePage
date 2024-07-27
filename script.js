@@ -123,4 +123,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showSlide(currentIndex);
 });
+let currentIndex = 0;
+        const containerp = document.querySelector('.courses-container');
+        const cardsp = document.querySelectorAll('.course-cardp');
+        const cardWidthp = cardsp[0].clientWidth + 20; // Account for margin
+        const prevBtn1 = document.getElementById('prev-btn');
+        const nextBtn1 = document.getElementById('next-btn');
+
+        function updateNavButtons() {
+            prevBtn1.classList.toggle('hidden', currentIndex === 0);
+            nextBtn1.classList.toggle('hidden', currentIndex >= cardsp.length - Math.floor(containerp.clientWidth / cardWidthp));
+        }
+
+        function moveSlider(direction) {
+            const maxIndex = cardsp.length - Math.floor(containerp.clientWidth / cardWidthp);
+            currentIndex = Math.min(Math.max(currentIndex + direction, 0), maxIndex);
+            containerp.style.transform = `translateX(-${currentIndex * cardWidthp}px)`;
+            updateNavButtons();
+        }
+
+        // Initialize button visibility
+        updateNavButtons();
+
 
