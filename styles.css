@@ -158,6 +158,74 @@ p {
     text-decoration: line-through;
     color: #999;
 }
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(241, 249, 255);
+    margin: 0;
+    padding: 0;
+}
+.slider-container {
+    width: 90%;
+    margin: 50px auto;
+    overflow: hidden;
+    position: relative;
+}
+h6{
+    color: #f39c12;
+}
+.slider {
+    
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    display: flex;
+    min-width: 100%;
+}
+.review-box {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    text-align: center;
+}
+.review-box img {
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+}
+.review-box h3 {
+    margin: 10px 0 5px;
+}
+.review-box h4 {
+    margin: 5px 0;
+    color: #777;
+}
+.review-box p {
+    color: #555;
+}
+.navigation {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+.navigation button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #333;
+    padding: 10px;
+}
 
 .footer {
     margin-top: 5%;
