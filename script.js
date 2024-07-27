@@ -124,3 +124,66 @@ document.addEventListener('DOMContentLoaded', function () {
     showSlide(currentIndex);
 });
 
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to show the first slide
+    function showFirstSlide() {
+        document.getElementById('firstContainer_g').classList.remove('hidden');
+        document.getElementById('nextContainer_g').classList.add('hidden');
+        document.getElementById('next_next_Container_g').classList.add('hidden');
+        document.getElementById('backBtn_g').style.display = 'none';
+        document.getElementById('nextBtn2_g').style.display = 'none';
+        document.getElementById('nextBtn_g').style.display = 'block';
+    }
+
+    // Function to show the second slide
+    function showSecondSlide() {
+        document.getElementById('firstContainer_g').classList.add('hidden');
+        document.getElementById('nextContainer_g').classList.remove('hidden');
+        document.getElementById('next_next_Container_g').classList.add('hidden');
+        document.getElementById('backBtn_g').style.display = 'block';
+        document.getElementById('nextBtn2_g').style.display = 'block';
+        document.getElementById('nextBtn_g').style.display = 'none';
+    }
+
+    // Function to show the third slide
+    function showThirdSlide() {
+        document.getElementById('firstContainer_g').classList.add('hidden');
+        document.getElementById('nextContainer_g').classList.add('hidden');
+        document.getElementById('next_next_Container_g').classList.remove('hidden');
+        document.getElementById('backBtn_g').style.display = 'block';
+        document.getElementById('nextBtn2_g').style.display = 'none';
+        document.getElementById('nextBtn_g').style.display = 'none';
+    }
+
+    // Add event listeners to the buttons
+    document.getElementById('nextBtn_g').addEventListener('click', showSecondSlide);
+    document.getElementById('nextBtn2_g').addEventListener('click', showThirdSlide);
+    document.getElementById('backBtn_g').addEventListener('click', function() {
+        if (!document.getElementById('nextContainer_g').classList.contains('hidden')) {
+            showFirstSlide();
+        } else if (!document.getElementById('next_next_Container_g').classList.contains('hidden')) {
+            showSecondSlide();
+        }
+    });
+
+    // Initially hide the buttons that should not be visible
+    document.getElementById('backBtn_g').style.display = 'none';
+    document.getElementById('nextBtn2_g').style.display = 'none';
+
+    // Initially show the first slide
+    showFirstSlide();
+});
+
+
+
+
+
+
+
