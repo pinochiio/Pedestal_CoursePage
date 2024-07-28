@@ -10,12 +10,18 @@
 }
 .container_g {
     background-color: white;
+    margin-top: -120px;
     display: flex;
     width: 90%;
     height: 70%;
-    padding: -10px;
     border-radius: 8px;
+    box-shadow: 0 12px 14px rgba(0, 0, 0, 0.1);
+    transition: red 0.3s;
     box-sizing: content-box;
+    position: relative;
+}
+.container_g:hover {
+    background-color: #f5f2f2;
 }
 
 .left-side {
@@ -98,7 +104,7 @@
 .slide-button_g {
     position: absolute;
     padding: 5px 15px;
-    background-color: #007bff;
+    background-color: rgb(38, 35, 35);
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -109,24 +115,95 @@
     transition: transform 0.3s ease;
 }
 .slide-button_g:hover {
-    background-color: #0056b3;
+    background-color: rgb(100, 94, 94);
 }
 
 #nextBtn_g, #nextBtn2_g {
-    right: 10px; /* Position "Next" buttons on the right */
-    bottom: 270px;
+    right: -60px; /* Position "Next" buttons on the right */
+    top: 197px;
+    bottom: 166px;
 }
 #backBtn_g{
     margin-right: 1140px;
-    bottom: 270px;
+    top: 240px;
+    bottom: 329.7px;
 }
 
 .hidden {
     display: none;
 }
 
+@media only screen and (max-width: 768px) {
+    .container_g {
+        width: 95%;
+        height: auto;
+    }
+
+    .main-heading h1, .sub-heading h1 {
+        font-size: 1.25rem; /* Adjust font size */
+    }
+
+    .main-heading p, .sub-heading p {
+        font-size: 0.875rem; /* Adjust font size */
+    }
+
+    .CDMSC, .CFSDM, .ECSGP {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .image-description {
+        font-size: 0.875rem; /* Adjust font size */
+    }
+
+    .price_g {
+        font-size: 1.25rem; /* Adjust font size */
+    }
+
+    .slide-button_g {
+        font-size: 0.875rem; /* Adjust font size */
+    }
+
+    #nextBtn_g, #nextBtn2_g, #backBtn_g {
+        bottom: 15px; /* Adjust as needed */
+    }
+}
 
 
+@media only screen and (max-width: 480px) {
+    .container_g {
+        width: 100%;
+        height: auto;
+    }
 
+    .main-heading h1, .sub-heading h1 {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .main-heading p, .sub-heading p {
+        font-size: 0.75rem; /* Adjust font size */
+    }
+
+    .CDMSC, .CFSDM, .ECSGP {
+        width: 100%;
+        margin: 5px auto;
+    }
+
+    .image-description {
+        font-size: 0.75rem; /* Adjust font size */
+    }
+
+    .price_g {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .slide-button_g {
+        font-size: 0.75rem; /* Adjust font size */
+    }
+
+    #nextBtn_g, #nextBtn2_g, #backBtn_g {
+        bottom: 10px; /* Adjust as needed */
+    }
+}
 
 
