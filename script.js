@@ -123,4 +123,89 @@ document.addEventListener('DOMContentLoaded', function () {
 
     showSlide(currentIndex);
 });
+let currentIndex = 0;
+        const containerp = document.querySelector('.courses-container');
+        const cardsp = document.querySelectorAll('.course-cardp');
+        const cardWidthp = cardsp[0].clientWidth + 20; // Account for margin
+        const prevBtn1 = document.getElementById('prev-btn');
+        const nextBtn1 = document.getElementById('next-btn');
+
+        function updateNavButtons() {
+            prevBtn1.classList.toggle('hidden', currentIndex === 0);
+            nextBtn1.classList.toggle('hidden', currentIndex >= cardsp.length - Math.floor(containerp.clientWidth / cardWidthp));
+        }
+
+        function moveSlider(direction) {
+            const maxIndex = cardsp.length - Math.floor(containerp.clientWidth / cardWidthp);
+            currentIndex = Math.min(Math.max(currentIndex + direction, 0), maxIndex);
+            containerp.style.transform = `translateX(-${currentIndex * cardWidthp}px)`;
+            updateNavButtons();
+        }
+
+        // Initialize button visibility
+        updateNavButtons();
+
+
+
+
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Function to show the first slide
+    function showFirstSlide() {
+        document.getElementById('firstContainer_g').classList.remove('hidden');
+        document.getElementById('nextContainer_g').classList.add('hidden');
+        document.getElementById('next_next_Container_g').classList.add('hidden');
+        document.getElementById('backBtn_g').style.display = 'none';
+        document.getElementById('nextBtn2_g').style.display = 'none';
+        document.getElementById('nextBtn_g').style.display = 'block';
+    }
+
+    // Function to show the second slide
+    function showSecondSlide() {
+        document.getElementById('firstContainer_g').classList.add('hidden');
+        document.getElementById('nextContainer_g').classList.remove('hidden');
+        document.getElementById('next_next_Container_g').classList.add('hidden');
+        document.getElementById('backBtn_g').style.display = 'block';
+        document.getElementById('nextBtn2_g').style.display = 'block';
+        document.getElementById('nextBtn_g').style.display = 'none';
+    }
+
+    // Function to show the third slide
+    function showThirdSlide() {
+        document.getElementById('firstContainer_g').classList.add('hidden');
+        document.getElementById('nextContainer_g').classList.add('hidden');
+        document.getElementById('next_next_Container_g').classList.remove('hidden');
+        document.getElementById('backBtn_g').style.display = 'block';
+        document.getElementById('nextBtn2_g').style.display = 'none';
+        document.getElementById('nextBtn_g').style.display = 'none';
+    }
+
+    // Add event listeners to the buttons
+    document.getElementById('nextBtn_g').addEventListener('click', showSecondSlide);
+    document.getElementById('nextBtn2_g').addEventListener('click', showThirdSlide);
+    document.getElementById('backBtn_g').addEventListener('click', function() {
+        if (!document.getElementById('nextContainer_g').classList.contains('hidden')) {
+            showFirstSlide();
+        } else if (!document.getElementById('next_next_Container_g').classList.contains('hidden')) {
+            showSecondSlide();
+        }
+    });
+
+    // Initially hide the buttons that should not be visible
+    document.getElementById('backBtn_g').style.display = 'none';
+    document.getElementById('nextBtn2_g').style.display = 'none';
+
+    // Initially show the first slide
+    showFirstSlide();
+});
+
+
+
+
+
+
 
