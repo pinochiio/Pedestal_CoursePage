@@ -123,6 +123,7 @@ p {
 }
 
 .course-info {
+    margin-left: -1.5%;
     display: flex;
     flex-direction: column;
     gap: 5px;
