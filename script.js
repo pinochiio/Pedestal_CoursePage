@@ -154,6 +154,8 @@ let currentIndex = 0;
 
 
 document.addEventListener('DOMContentLoaded', function () {
+    
+
     // Function to show the first slide
     function showFirstSlide() {
         document.getElementById('firstContainer_g').classList.remove('hidden');

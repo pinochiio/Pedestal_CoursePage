@@ -458,3 +458,176 @@ h6{
     padding: 2%;
     border-radius: 8px;
 }
+
+
+@media (max-width: 768px){
+    .course-card img {
+        width: 42%;
+        height: auto;
+        object-fit: cover;
+    }
+    .course-cardp {
+        height: 400px;
+        flex: 0 0 calc(30% - 40px);
+    }
+    .footer .contact-info h4 {
+        margin-left: 40%; 
+    }
+    
+}
+
+@media (max-width: 576px){
+    .course-card img {
+        visibility: hidden;
+    }
+    .course-card{
+        height: 300px;
+        margin-left: 10%;
+    }
+    .content h2{
+        font-size: 20px;
+    }
+    .content p{
+        font-size: 17px;
+    }
+    .rating{
+        font-size: 17px;
+    }
+    .details{
+        font-size: 17px;
+    }
+
+    .price{
+        font-size: 20px;
+    }
+    .course-cardp {
+        height: 360px;
+        flex: 0 0 calc(45% - 40px);
+    }
+    .review-box{
+        flex: 0 0 calc(55% - 40px);
+        height: 360px;
+    }
+    .footer .contact-info h4 {
+        margin-left: 15%; 
+    }
+    
+}
+@media (max-width:480px){
+    .logo img{
+        width: 60%;
+    }
+    .search-bar{
+        margin-left: -18%;
+        margin-right: -31px;
+    }
+    .course-cardp{
+        height: 340px;
+    }
+    .review-box{
+        flex: 0 0 calc(60% - 40px);
+    }
+    .mail{
+        margin-left: -35px;
+    }
+}
+@media (max-width: 320px){
+    .logo{
+        width: 50%;
+    }
+    .course-cardp{
+        height: 380px;
+        flex: 0 0 calc(70% - 40px);
+    }
+    .course-card{
+        width: 150px;
+        height: 450px;
+    }
+    .content{
+        word-wrap: break-word; /* Ensures words break within the box */
+        overflow-wrap: break-word ; /* Ensures words break within the box */
+    }
+    .price{
+        display: contents;
+    }
+
+}
+@media (max-device-width: 412px) and (max-device-height:915px){
+    .course-card{
+        width: 240px;
+    }
+    .review-box{
+        height: 450px;
+    }
+}
+@media (max-device-width: 375px) and (max-device-height:667px){
+    .course-card{
+        width: 200px;
+        height: 440px;
+    }
+    .price{
+        display: contents;
+    }
+    .review-box{
+        font-size: 15px;
+    }
+}
+@media (max-device-width: 414px) and (max-device-height:896px){
+    .course-card{
+        width: 87%;
+    }
+}
+@media (max-device-width: 390px) and (max-device-height:844px){
+    .course-card{
+        width: 99%;
+        margin-left: 1px;
+    }
+    .container1{
+        width: 70%;
+    }
+}
+@media (max-device-width: 430px) and (max-device-height:932px){
+    .course-card{
+        width: 90%;
+    }
+    .review-box{
+        height: fit-content;
+    }
+}
+@media (max-device-width: 412px) and (max-device-height:915px){
+    .course-card{
+        width: 88%;
+    }
+    .review-box{
+        height: 450px;
+    }
+}
+@media (max-device-width: 360px) and (max-device-height:740px){
+    .container1{
+        margin-left: 15px;
+        width: 68%;
+    }
+    .course-card{
+        width: 100%;
+    }
+    .price{
+        font-size: 19px;
+    }
+    .review-box{
+        height: 500px;
+    }
+}
+@media (max-device-width: 344px) and (max-device-height:882px){
+    .container1{
+        width: 90%;
+        margin-right: -19px;
+    }
+    .course-card{
+        margin-left: 1px;
+        width: 100%;
+        height: max-content;
+    }
+    .price{
+        display: contents;
+    }
+}
