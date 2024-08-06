@@ -546,29 +546,8 @@ h6{
         background-color: #fff;
         margin-bottom: 20px;
     }
-    .container1{
-        width: 100%;
-        margin-left: auto;
-    }
-    .course-card{
-        display: flex;
-        padding: 10px;
-        width: 100%;
-    }
-    .content{
-        margin-right: 1px;
-        margin-left: auto;
-        width: -100%;
-    }
-    .course-card img {
-        background-color: #f39c12;
-        width: 55%;
-        height: auto;
-        object-fit: cover;
-    }
-    .course-card span {
-        width: fit-content;
-        display: block;
+    .course-card img{
+        align-self: center;
     }
     .footer .contact-info h4 {
         margin-left: 40%; 
@@ -669,7 +648,7 @@ h6{
     }
     .content p{
         margin-left: -20px;
-        width: 65%;
+        width: 60%;
     }
     .rating{
         margin-left: -20px;
@@ -741,11 +720,16 @@ h6{
         width: 100%;
     }
     .course-card{
+        margin-left: 2px;
         width: 100%;
     }
+    .content{
+        margin-left: 10px;
+    }
     .content h2{
+        font-size: 23px;
         margin-left: -20px;
-        width: 74%;
+        width: 60%;
     }
     .content p{
         margin-left: -20px;
@@ -821,6 +805,15 @@ h6{
     .review-box{
         flex: 0 0 calc(100% - 10px);
     }
+    .content{
+        margin-left: 14px;
+    }
+    .content h2{
+        max-width: 370px;
+    }
+    .content p{
+        max-width: 370px;
+    }
 }
 @media (max-device-width: 390px) and (max-device-height:844px){
     .course-card{
@@ -846,6 +839,9 @@ h6{
     }
     .course-card{
         width: 100%;
+    }
+    .content{
+        margin-left: 14px;
     }
     .content h2{
         margin-left: -29px;
