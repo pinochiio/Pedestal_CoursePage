@@ -331,19 +331,20 @@
         </div>
         <script src="script.js"></script>
     </main>
-    <h1>All Courses</h1>
+    <h1 class="all-courses">All Courses</h1>
     <div class="main-container">
         <div class="filter-containter">
             <div class="filter-box">
                 <div class="filter-section">
-                    <h3>Search Course</h3>
-                    <input type="text" id="search-box" class="large-search-box" placeholder="Search for a course">
+                    <h3 class="search-course-heading">Search Course</h3>
+                    <input type="text" id="search-box" class="large-search-box srch-bar" placeholder="Search for a course">
                 </div>
                 <div class="filter-section">
                     <h3>Ratings</h3>
                     <hr>
                     <br>
                     <div class="rating-options">
+                        <div class="checkbox-options">
                         <label>
                             <input type="radio" name="rating" value="4.5"> 
                             <span class="rating">★★★★</span> & above
@@ -361,13 +362,23 @@
                             <span class="rating">★</span> & above
                         </label>
                     </div>
+                    <!-- Dropdown options for smaller screens -->
+                    <select id="ratings-dropdown" class="dropdown-options">
+                        <option value="">Select Rating</option>
+                        <option value="4.5">★★★★ & above</option>
+                        <option value="4.0">★★★ & above</option>
+                        <option value="3.5">★★ & above</option>
+                        <option value="3.0">★ & above</option>
+                    </select>
                 </div>
+            </div>
                 
                 <div class="filter-section">
                     <h3>Video Duration</h3>
                     <hr>
                     <br>
                     <div class="duration-options">
+                        <div class="checkbox-options">
                         <label>
                             <input type="checkbox" value="0-1"> 0-1 Month
                         </label>
@@ -381,13 +392,23 @@
                             <input type="checkbox" value="6-17"> 12-24 Months
                         </label>
                     </div>
+                    <!-- Dropdown options for smaller screens -->
+        <select id="video-duration" class="dropdown-options">
+            <option value="">Select Video Duration</option>
+            <option value="0-1">0-1 Month</option>
+            <option value="1-6">1-6 Months</option>
+            <option value="6-12">6-12 Months</option>
+            <option value="12-24">12-24 Months</option>
+        </select>
                 </div>
+            </div>
                 
                 <div class="filter-section">
                     <h3>Topic</h3>
                     <hr>
                     <br>
                     <div class="topic-options">
+                        <div class="checkbox-options">
                         <label>
                             <input type="checkbox" value="web-development"> Digital Marketing
                         </label>
@@ -422,7 +443,23 @@
                             <input type="checkbox" value="javascript"> Python
                         </label>
                     </div>
+                    <!-- Dropdown options for smaller screens -->
+        <select id="topic" class="dropdown-options">
+            <option value="">Select Topic</option>
+            <option value="digital-marketing">Digital Marketing</option>
+            <option value="coding">Coding</option>
+            <option value="artificial-intelligence">Artificial Intelligence</option>
+            <option value="machine-learning">Machine Learning</option>
+            <option value="business-development">Business Development</option>
+            <option value="cloud-computing">Cloud Computing</option>
+            <option value="cyber-security">Cyber Security</option>
+            <option value="data-science">Data Science</option>
+            <option value="image-processing">Image Processing</option>
+            <option value="fin-tech">Fin-tech</option>
+            <option value="python">Python</option>
+        </select>
                 </div>
+            </div>
                 <div class="filter-section">
                     <h3>Price Range</h3>
                     <hr>

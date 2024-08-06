@@ -105,6 +105,11 @@
         flex-direction: column;
     }
 }
+@media (max-width: 320px){
+    .placement-body{
+        width: 90%;
+    }
+}
 @media (max-device-width: 375px) and (max-device-height:667px){
     .placement-body{
         width: 90%;
