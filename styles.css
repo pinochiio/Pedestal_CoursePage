@@ -510,7 +510,7 @@ h6{
 }
 @media(min-width: 991px){
     .course-card img {
-        width: 53%;
+        align-self: center;
         height: auto;
         object-fit: cover;
     }
